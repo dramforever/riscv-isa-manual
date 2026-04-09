@@ -38,7 +38,7 @@ Asciidoctor::Extensions.register do
       str = name == ":" ? "" : "#{name.downcase}"
 
       if args.size == 1
-        str += '.' unless str.empty?
+        str += ".\u{2060}" unless str.empty?
         str += args[1].upcase
       elsif args.size > 1
         parent.document.logger.fatal "macro csr:#{name}[] takes at most one argument"
